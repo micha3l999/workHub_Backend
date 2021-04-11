@@ -1,15 +1,18 @@
-const express = require('express');
+const express = require("express");
+const connectDB = require("./config/db");
+const dotenv = require("dotenv").config();
+
+connectDB();
+
 const app = express();
 
-const { PORT, HOST} = require('./config/');
+const { PORT, HOST } = require("./config/index");
 const logger = require("./logger");
-const Firestore = require("./lib/services/firebase-storage/firebase-admin");
 
-app.get('/', (req, res) => {
-  res.send('Hello world');
+app.get("/", (req, res) => {
+  res.send("Hello world");
 });
 
 app.listen(PORT, HOST, function () {
   logger.info(`App listening on http://${HOST}:${PORT}`);
 });
-
