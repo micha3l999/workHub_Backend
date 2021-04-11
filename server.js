@@ -27,6 +27,6 @@ app.get("/", (req, res) => {
 
 app.use("/api/user", userRoutes);
 
-app.listen(PORT, HOST, function () {
+app.listen(PORT, function () {
   logger.info(`App listening on http://${HOST}:${PORT}`);
 });
