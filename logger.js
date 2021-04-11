@@ -5,7 +5,7 @@ const tsFormat = () => (new Date()).toLocaleTimeString();
 const myFormat = winston.format.printf(({ level, message, timestamp }) => {
   return `${timestamp} [${level}]: ${message}`;
 });
- 
+
 const Logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.colorize(),
@@ -18,6 +18,6 @@ const Logger = winston.createLogger({
 });
 
 global.WinstonLogger = Logger;
- 
+
 module.exports = Logger;
 

@@ -1,7 +1,9 @@
-const { PORT, HOST} = require('./config/');
 const express = require('express');
 const app = express();
+
+const { PORT, HOST} = require('./config/');
 const logger = require("./logger");
+const Firestore = require("./lib/services/firebase-storage/firebase-admin");
 
 app.get('/', (req, res) => {
   res.send('Hello world');
