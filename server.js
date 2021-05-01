@@ -4,9 +4,12 @@ const connectDB = require("./config/db");
 const dotenv = require("dotenv").config();
 const bodyParser = require("body-parser");
 const router = express.Router();
+const { validate, ValidationError, Joi } = require('express-validation')
 
 //User routes
 const userRoutes = require("./lib/user/userRoutes.js");
+//Category routes
+const categoryRoutes = require("./lib/categories/categoryRoutes.js");
 
 connectDB();
 
@@ -26,6 +29,13 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/user", userRoutes);
+app.use("/api/category", categoryRoutes);
+app.use(function(err, req, res, next) {
+  if (err instanceof ValidationError) {
+    return res.status(err.statusCode).json({ error : err.details.body[0].message})
+  }
+  return res.status(500).json(err)
+})
 
 app.listen(PORT, function () {
   logger.info(`App listening on http://${HOST}:${PORT}`);
