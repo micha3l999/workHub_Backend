@@ -4,7 +4,8 @@ const connectDB = require("./config/db");
 const dotenv = require("dotenv").config();
 const bodyParser = require("body-parser");
 const router = express.Router();
-const { validate, ValidationError, Joi } = require('express-validation')
+const { validate, ValidationError, Joi } = require('express-validation');
+require("./config/firebaseStorageInstance");
 
 //User routes
 const userRoutes = require("./lib/user/userRoutes.js");
@@ -14,7 +15,6 @@ const categoryRoutes = require("./lib/categories/categoryRoutes.js");
 connectDB();
 
 const app = express();
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());

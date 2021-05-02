@@ -26,6 +26,7 @@
     "express": "^4.17.1",
     "express-validation": "^3.0.8",
     "firebase": "^8.4.3",
+    "firebase-admin": "^9.7.0",
     "joi": "^17.4.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.3",
