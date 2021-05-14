@@ -5,7 +5,6 @@ const dotenv = require("dotenv").config();
 const bodyParser = require("body-parser");
 const router = express.Router();
 const { validate, ValidationError, Joi } = require('express-validation');
-require("./config/firebaseStorageInstance");
 
 //User routes
 const userRoutes = require("./lib/user/userRoutes.js");
