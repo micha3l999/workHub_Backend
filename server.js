@@ -10,6 +10,10 @@ const { validate, ValidationError, Joi } = require('express-validation');
 const userRoutes = require("./lib/user/userRoutes.js");
 //Category routes
 const categoryRoutes = require("./lib/categories/categoryRoutes.js");
+//Subcategory routes
+const subcategoryRoutes = require("./lib/subcategories/subcategoryRoutes.js")
+//seller routes
+const sellerRoutes = require("./lib/seller/sellerRoutes.js")
 
 connectDB();
 
@@ -29,6 +33,8 @@ app.get("/", (req, res) => {
 
 app.use("/api/user", userRoutes);
 app.use("/api/category", categoryRoutes);
+app.use("/api/subcategory", subcategoryRoutes);
+app.use("/api/seller", sellerRoutes);
 app.use(function(err, req, res, next) {
   if (err instanceof ValidationError) {
     return res.status(err.statusCode).json({ error : err.details.body[0].message})
