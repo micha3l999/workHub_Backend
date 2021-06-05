@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const { PORT, HOST } = require("./config/index");
-const logger = require("./logger");
+require("./logger");
 
 app.use("/", router);
 
@@ -43,5 +43,5 @@ app.use(function(err, req, res, next) {
 })
 
 app.listen(PORT, function () {
-  logger.info(`App listening on http://${HOST}:${PORT}`);
+  WinstonLogger.info(`App listening on http://${HOST}:${PORT}`);
 });
