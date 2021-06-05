@@ -14,6 +14,8 @@ const categoryRoutes = require("./lib/categories/categoryRoutes.js");
 const subcategoryRoutes = require("./lib/subcategories/subcategoryRoutes.js")
 //seller routes
 const sellerRoutes = require("./lib/seller/sellerRoutes.js")
+//Search routes
+const searchRoutes = require("./lib/search/searchRoutes.js")
 
 connectDB();
 
@@ -35,6 +37,7 @@ app.use("/api/user", userRoutes);
 app.use("/api/category", categoryRoutes);
 app.use("/api/subcategory", subcategoryRoutes);
 app.use("/api/seller", sellerRoutes);
+app.use("/api/search", searchRoutes);
 app.use(function(err, req, res, next) {
   if (err instanceof ValidationError) {
     return res.status(err.statusCode).json({ error : err.details.body[0].message})
