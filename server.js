@@ -20,8 +20,10 @@ const searchRoutes = require("./lib/search/searchRoutes.js")
 connectDB();
 
 const app = express();
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+}));
 app.use(cors());
 
 const { PORT, HOST } = require("./config/index");
