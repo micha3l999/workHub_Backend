@@ -36,6 +36,11 @@ app.get("/", (req, res) => {
   res.send("API is running.....");
 });
 
+app.use((req, res, next) => {
+  req.body = JSON.parse(req.body);
+  return next();
+});
+
 app.use("/api/user", userRoutes);
 app.use("/api/category", categoryRoutes);
 app.use("/api/subcategory", subcategoryRoutes);
