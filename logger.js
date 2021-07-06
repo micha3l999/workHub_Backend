@@ -15,6 +15,6 @@ const Logger = winston.createLogger({
   transports: [new winston.transports.Console()],
 });
 
-global.WinstonLogger = Logger;
+global.logger = Logger;
 
 module.exports = Logger;

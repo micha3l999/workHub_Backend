@@ -50,5 +50,5 @@ app.use(function(err, req, res, next) {
 })
 
 app.listen(PORT, function () {
-  WinstonLogger.info(`App listening on http://${HOST}:${PORT}`);
+  logger.info(`App listening on http://${HOST}:${PORT}`);
 });
