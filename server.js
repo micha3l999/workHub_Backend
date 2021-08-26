@@ -19,6 +19,8 @@ const searchRoutes = require("./lib/search/searchRoutes.js");
 const sellerServicesRoutes = require("./lib/sellerServices/sellerServicesRoutes.js");
 //Hired services routes
 const hiredServicesRoutes = require("./lib/hiredService/hiredServiceRoutes");
+//Paypal
+const paypalRoutes = require("./lib/paypal/paypalRoutes");
 
 connectDB();
 
@@ -45,6 +47,8 @@ app.use("/api/seller", sellerRoutes);
 app.use("/api/search", searchRoutes);
 app.use("/api/sellerService", sellerServicesRoutes);
 app.use("/api/hiredService", hiredServicesRoutes);
+app.use("/api/paypal", paypalRoutes);
+
 app.use(function(err, req, res, next) {
   if (err instanceof ValidationError) {
     return res.status(err.statusCode).json({ error : err.details.body[0].message})
