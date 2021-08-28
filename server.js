@@ -20,7 +20,7 @@ const sellerServicesRoutes = require("./lib/sellerServices/sellerServicesRoutes.
 //Hired services routes
 const hiredServicesRoutes = require("./lib/hiredService/hiredServiceRoutes");
 //Paypal
-const paypalRoutes = require("./lib/paypal/paypalRoutes");
+const paypalRoutes = require("./lib/payments/paypal/paypalRoutes");
 
 connectDB();
 
