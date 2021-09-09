@@ -9,10 +9,16 @@ const myFormat = winston.format.printf(({ level, message, timestamp }) => {
 const Logger = winston.createLogger({
   format: winston.format.combine(
     winston.format.colorize(),
-    winston.format.timestamp(tsFormat),
+    winston.format.timestamp({format: 'MMM-DD-YYYY HH:mm:ss'}),
     myFormat
   ),
-  transports: [new winston.transports.Console()],
+  transports: [
+    new winston.transports.Console(),
+    new winston.transports.File({
+      level: "error",
+      filename: 'logs/errors.log',
+  })
+  ],
 });
 
 global.logger = Logger;

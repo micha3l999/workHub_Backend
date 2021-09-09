@@ -21,6 +21,8 @@ const sellerServicesRoutes = require("./lib/sellerServices/sellerServicesRoutes.
 const hiredServicesRoutes = require("./lib/hiredService/hiredServiceRoutes");
 //Paypal
 const paypalRoutes = require("./lib/payments/paypal/paypalRoutes");
+// Customer routes
+const customerRoutes = require("./lib/customer/customerRoutes");
 
 connectDB();
 
@@ -40,6 +42,7 @@ app.get("/", (req, res) => {
   res.send("API is running.....");
 });
 
+// Routes
 app.use("/api/user", userRoutes);
 app.use("/api/category", categoryRoutes);
 app.use("/api/subcategory", subcategoryRoutes);
@@ -48,6 +51,8 @@ app.use("/api/search", searchRoutes);
 app.use("/api/sellerService", sellerServicesRoutes);
 app.use("/api/hiredService", hiredServicesRoutes);
 app.use("/api/paypal", paypalRoutes);
+app.use("/api/customer", customerRoutes);
+
 
 app.use(function(err, req, res, next) {
   if (err instanceof ValidationError) {
