@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/bmbravo/WorkHub_BackEnd#readme",
   "dependencies": {
+    "@paypal/checkout-server-sdk": "^1.0.2",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",

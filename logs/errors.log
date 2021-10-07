@@ -1,0 +1,6 @@
+Sep-16-2021 14:36:54 [[31merror[39m]: User validation failed: phone: A number is required, countryCode: The country code is required, role: `ADMIN` is not a valid enum value for path `role`.
+Sep-16-2021 14:42:44 [[31merror[39m]: User validation failed: email: 'violet23@gmail.com' is already in use
+Sep-16-2021 14:43:25 [[31merror[39m]: Unauthorized - null
+Sep-16-2021 14:47:23 [[31merror[39m]: [object Object]
+Sep-16-2021 14:47:27 [[31merror[39m]: [object Object]
+Sep-16-2021 14:54:38 [[31merror[39m]: [object Object]
